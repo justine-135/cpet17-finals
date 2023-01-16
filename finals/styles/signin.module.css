@@ -1,0 +1,74 @@
+.signin_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.signin_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.h1 {
+  font-family: "Inter", sans-serif;
+  margin: 10px 0;
+}
+.input_text {
+  height: 50px;
+  width: 20%;
+  min-width: 260px;
+  max-width: 280px;
+  border: 1px solid rgba(0, 0, 0, 0.349);
+  border-radius: 5px;
+  outline: none;
+  padding: 5px;
+  font-size: 1.125rem;
+  transition: 200ms ease;
+}
+.input_text:focus {
+  border: 3px solid #152dff;
+}
+.forgotpass_div {
+  display: flex;
+  align-items: center;
+  width: 20%;
+  min-width: 260px;
+  max-width: 280px;
+}
+.forgotpass_link {
+  margin-left: auto;
+  font-family: "Inter", sans-serif;
+  color: #152dff;
+  font-size: 1rem;
+  text-align: right;
+}
+.signup_btn {
+  height: 50px;
+  width: 20%;
+  min-width: 260px;
+  max-width: 280px;
+  margin: 10px 0 10px 0;
+  background-color: #152dff;
+  color: white;
+  border: none;
+  font-size: 1.125rem;
+  border-radius: 5px;
+}
+.p,
+.p_notfound,
+.p_found {
+  font-family: "Inter", sans-serif;
+}
+.p_notfound {
+  color: red;
+}
+.p_found {
+  color: green;
+}
+.signup_link {
+  font-family: "Inter", sans-serif;
+  color: #152dff;
+}

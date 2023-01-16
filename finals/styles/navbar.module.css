@@ -1,0 +1,39 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000000de;
+  width: 100%;
+  padding: 10px;
+}
+
+.p_user {
+  font-family: "Martian Mono", monospace;
+  color: white;
+  font-size: 0.875rem;
+}
+
+.signout_btn,
+.back_btn {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  font-family: "Inter", sans-serif;
+  color: white;
+  border: 1px solid transparent;
+  height: 42px;
+  width: auto;
+  border-radius: 5px;
+  padding: 0 10px;
+  transition: 200ms ease;
+}
+
+.signout_btn:hover,
+.back_btn:hover {
+  border: 1px solid white;
+}
+
+.signout_btn img,
+.back_btn img {
+  margin-right: 5px;
+}

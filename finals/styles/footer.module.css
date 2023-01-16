@@ -1,0 +1,11 @@
+.footer_div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+}
+
+.p_footer {
+  font-family: "Martian Mono", monospace;
+  font-size: 0.875rem;
+}
