@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useSession } from "next-auth/react";
 import { useEffect } from "react";
-import Router from "next/router";
+import { useRouter } from "next/router";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Link from "next/link";
@@ -20,10 +20,11 @@ export const getStaticProps = async () => {
 
 const motion = ({ motions }) => {
   const { status } = useSession();
+  const router = useRouter();
 
   useEffect(() => {
     if (status === "unauthenticated") {
-      Router.replace("/auth/login");
+      router.replace("/auth/login");
     }
   }, [status]);
 

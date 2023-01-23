@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../../styles/login.module.css";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signIn } from "next-auth/react";
 import { useRouter } from "next/router";
 
 const login = () => {
@@ -8,7 +8,7 @@ const login = () => {
   const { status, data } = useSession();
 
   if (status === "authenticated") {
-    router.replace("/motion");
+    router.replace("/");
   } else {
     return (
       <>

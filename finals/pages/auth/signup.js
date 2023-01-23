@@ -43,7 +43,7 @@ const signup = () => {
 
     if (result != true) {
       try {
-        const res = await fetch("http://localhost:3000/api/users/check", {
+        const res = await fetch("http://localhost:3002/api/users/check", {
           method: "POST",
           body: JSON.stringify({ userInfo }),
           headers: { "Content-Type": "application/json" },
@@ -53,7 +53,7 @@ const signup = () => {
 
         // if user not registered yet, insert
         if (user.length == 0) {
-          const res2 = await fetch("http://localhost:3000/api/users/insert", {
+          const res2 = await fetch("http://localhost:3002/api/users/insert", {
             method: "POST",
             body: JSON.stringify({ userInfo }),
             headers: { "Content-Type": "application/json" },
@@ -77,7 +77,7 @@ const signup = () => {
   };
 
   if (status === "authenticated") {
-    router.replace("/motion");
+    router.replace("/");
   } else {
     return (
       <>

@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = process.env.port || 3000;
+const port = 3002;
 const mysql = require("mysql2");
 
 // create the connection to database
@@ -170,7 +170,7 @@ app.post("/api/users/reset_pass", (req, res) => {
   const token = jwt.sign({ email: email, id: id }, secret, {
     expiresIn: "5m",
   });
-  const link = `http://localhost:3000/api/users/reset_pass/${id}/${token}`;
+  const link = `http://localhost:3002/api/users/reset_pass/${id}/${token}`;
   var transporter = nodemailer.createTransport({
     service: "hotmail",
     auth: {

@@ -18,7 +18,7 @@ const signin = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:3000/api/users/check_email", {
+      const res = await fetch("http://localhost:3002/api/users/check_email", {
         method: "POST",
         body: JSON.stringify({ email }),
         headers: { "Content-Type": "application/json" },
@@ -37,7 +37,7 @@ const signin = () => {
         };
         console.log(fetchedUser);
 
-        const res2 = await fetch("http://localhost:3000/api/users/reset_pass", {
+        const res2 = await fetch("http://localhost:3001/api/users/reset_pass", {
           method: "POST",
           body: JSON.stringify({ fetchedUser }),
           headers: { "Content-Type": "application/json" },

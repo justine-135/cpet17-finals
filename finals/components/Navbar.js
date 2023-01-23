@@ -1,6 +1,6 @@
 import styles from "../styles/navbar.module.css";
-import { useSession, signIn, signOut } from "next-auth/react";
-import { useEffect, useState } from "react";
+import { useSession, signOut } from "next-auth/react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 
 const Navbar = () => {
@@ -18,13 +18,18 @@ const Navbar = () => {
     router.replace("/");
   };
 
+  const handleSignout = () => {
+    router.push("/auth/login");
+    signOut();
+  };
+
   if (window.location.href === "http://localhost:3001/") {
     return (
       <nav className={styles.navbar}>
         <div>
           <p className={styles.p_user}>Welcome: {user.name}</p>
         </div>
-        <button className={styles.signout_btn} onClick={() => signOut()}>
+        <button className={styles.signout_btn} onClick={handleSignout}>
           <img src="/logoutcurve.svg" alt="" />
           Logout
         </button>
