@@ -4,7 +4,10 @@ import styles from "../../styles/motion.module.css";
 import Footer from "../../components/Footer";
 import { useSession } from "next-auth/react";
 import { useEffect } from "react";
+import { useRouter } from "next/router";
 
+// Change server host
+// const SERVER_HOST = "http://172.16.23.110:3000";
 const SERVER_HOST = "http://localhost:3000";
 
 export const getStaticPaths = async () => {
@@ -36,9 +39,11 @@ export const getStaticProps = async (context) => {
 
 const Details = ({ motion }) => {
   const { status } = useSession();
+  const router = useRouter();
+
   useEffect(() => {
     if (status === "unauthenticated") {
-      Router.replace("/auth/login");
+      router.replace("/auth/login");
     }
   }, [status]);
 

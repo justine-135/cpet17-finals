@@ -37,7 +37,7 @@ const signin = () => {
         };
         console.log(fetchedUser);
 
-        const res2 = await fetch("http://localhost:3001/api/users/reset_pass", {
+        const res2 = await fetch("http://localhost:3002/api/users/reset_pass", {
           method: "POST",
           body: JSON.stringify({ fetchedUser }),
           headers: { "Content-Type": "application/json" },

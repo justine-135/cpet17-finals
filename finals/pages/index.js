@@ -7,6 +7,8 @@ import Footer from "../components/Footer";
 import Link from "next/link";
 import styles from "../styles/motion.module.css";
 
+// Change server host
+// const SERVER_HOST = "http://172.16.23.110:3000";
 const SERVER_HOST = "http://localhost:3000";
 
 export const getStaticProps = async () => {
