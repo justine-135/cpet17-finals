@@ -40,53 +40,53 @@ app.set("view engine", "ejs");
 
 // api to insert row using POST method
 // return JSON
-app.post("/api/camera/insert", (req, res) => {
-  // create query to db
-  connection.execute(
-    "INSERT INTO `detected_with_blob` (start_time, end_time, image) VALUES (?, ?, ?)",
-    [req.body.start_time, req.body.end_time, req.body.image],
-    (err, results, fields) => {
-      if (err) throw err;
-      res.json({
-        message: `recorded new motion.`,
-        inserted_at_id: results.insertId,
-      });
-    }
-  );
-});
+// app.post("/api/camera/insert", (req, res) => {
+//   // create query to db
+//   connection.execute(
+//     "INSERT INTO `detected_with_blob` (start_time, end_time, image) VALUES (?, ?, ?)",
+//     [req.body.start_time, req.body.end_time, req.body.image],
+//     (err, results, fields) => {
+//       if (err) throw err;
+//       res.json({
+//         message: `recorded new motion.`,
+//         inserted_at_id: results.insertId,
+//       });
+//     }
+//   );
+// });
 
-// api to insert row using POST method
-// return JSON
-app.get("/api/motion", (req, res) => {
-  // create query to db
-  connection.execute(
-    "SELECT * FROM `detected_with_blob`",
-    (err, results, fields) => {
-      if (err) throw err;
-      res.json(results);
-    }
-  );
-});
+// // api to insert row using POST method
+// // return JSON
+// app.get("/api/motion", (req, res) => {
+//   // create query to db
+//   connection.execute(
+//     "SELECT * FROM `detected_with_blob`",
+//     (err, results, fields) => {
+//       if (err) throw err;
+//       res.json(results);
+//     }
+//   );
+// });
 
-app.get("/api/motion/:id", (req, res) => {
-  let id = req.params.id;
-  // create query to db
-  connection.execute(
-    "SELECT * FROM `detected_with_blob` WHERE id = ?",
-    [id],
-    function (err, results, fields) {
-      if (err) throw err;
+// app.get("/api/motion/:id", (req, res) => {
+//   let id = req.params.id;
+//   // create query to db
+//   connection.execute(
+//     "SELECT * FROM `detected_with_blob` WHERE id = ?",
+//     [id],
+//     function (err, results, fields) {
+//       if (err) throw err;
 
-      if (results.length > 0) {
-        res.json(results);
-      } else {
-        res
-          .status(400)
-          .json({ message: `user with an id of ${id} is not found.` });
-      }
-    }
-  );
-});
+//       if (results.length > 0) {
+//         res.json(results);
+//       } else {
+//         res
+//           .status(400)
+//           .json({ message: `user with an id of ${id} is not found.` });
+//       }
+//     }
+//   );
+// });
 
 // api to show all rows
 // return JSON
@@ -193,6 +193,8 @@ app.post("/api/users/reset_pass", (req, res) => {
       console.log("Email sent: " + info.response);
     }
   });
+
+  console.log("data sent");
 });
 
 app.get("/api/users/reset_pass/:id/:token", (req, res) => {
