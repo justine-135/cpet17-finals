@@ -6,8 +6,10 @@ Daryl Magpantay
 
 # designers
 James Ferrer
+<br>
 Richard Manipon
 
 # developers
 Justine Upano
+<br>
 Louise Yagi
