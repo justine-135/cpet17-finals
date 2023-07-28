@@ -12,8 +12,6 @@ const Navbar = () => {
   });
   const router = useRouter();
 
-  console.log(window.location.href);
-
   const handleBack = () => {
     router.replace("/");
   };
